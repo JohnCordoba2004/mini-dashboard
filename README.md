@@ -1,37 +1,39 @@
-# 🚀 Mini-Dashboard Interactivo
+# 🚀 Mini‑Dashboard Interactivo (para todo público)
 
-Un dashboard minimalista e interactivo construido con **JavaScript puro** y **GSAP** para animaciones fluidas y profesionales.
+Un dashboard minimalista e interactivo construido con **HTML + CSS + JavaScript** y **Chart.js** para visualizar datos en un **gráfico de barras**. Pensado para aprender paso a paso, sin frameworks complicados.
 
-## ✨ Características
+## ✨ ¿Qué puedes hacer con este dashboard?
 
-- **JavaScript Vanilla**: Código limpio y moderno sin dependencias de frameworks
-- **Animaciones GSAP**: Transiciones suaves y efectos visuales atractivos
-- **Diseño Responsivo**: Adaptable a diferentes tamaños de pantalla
-- **Interfaz Minimalista**: UI limpia y enfocada en la funcionalidad
-- **Módulos ES6**: Estructura de código organizada y mantenible
+- **Filtrar datos por categoría** con un menú desplegable
+- **Ver tarjetas (cards)** que muestran los valores por categoría
+- **Ver totales** por cada categoría (Ventas, Gastos, Usuarios, Admin)
+- **Observar un gráfico de barras** que se actualiza automáticamente con Chart.js
+- **Disfrutar de animaciones suaves** usando solo CSS
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías utilizadas
 
-- **HTML5**: Estructura semántica moderna
-- **CSS3**: Estilos y diseño responsivo
-- **JavaScript ES6+**: Lógica de aplicación y funcionalidad
-- **GSAP**: Biblioteca de animaciones profesionales
+- **HTML5**: Estructura semántica
+- **CSS3**: Estilos modernos y diseño responsive
+- **JavaScript ES6+**: Lógica de la app y manejo del DOM
+- **Chart.js (CDN)**: Biblioteca para gráficos
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del proyecto
 
 ```
 mini-dashboard/
 ├── index.html          # Página principal HTML
 ├── app.js             # Lógica principal de la aplicación
 ├── style.css          # Estilos CSS
+├── JS_EXPLICACION.md   # Guía paso a paso del JavaScript
+├── CSS_EXPLICACION.md  # Guía paso a paso del CSS
 └── README.md          # Documentación del proyecto
 ```
 
-## 🚀 Instalación y Uso
+## 🚀 Instalación y uso
 
-### Requisitos Previos
+### Requisitos previos
 - Navegador web moderno con soporte para ES6+
-- Conexión a internet para cargar GSAP CDN
+- Conexión a internet para cargar Chart.js desde CDN
 
 ### Pasos de Instalación
 
@@ -59,10 +61,10 @@ mini-dashboard/
 
 ## 🔧 Configuración
 
-### GSAP
-El proyecto utiliza GSAP desde CDN. Si prefieres usar una versión local:
+### Chart.js
+El proyecto utiliza Chart.js desde CDN. Si prefieres usar una versión local:
 
-1. Descarga GSAP desde [greensock.com](https://greensock.com/)
+1. Descarga Chart.js desde `https://www.chartjs.org/`
 2. Reemplaza el CDN en `index.html` con la ruta local
 
 ### Personalización
@@ -70,12 +72,19 @@ El proyecto utiliza GSAP desde CDN. Si prefieres usar una versión local:
 - Edita `app.js` para agregar nuevas funcionalidades
 - Actualiza `index.html` para cambiar la estructura
 
-## 📱 Características del Dashboard
+## 🧠 ¿Cómo funciona por dentro?
 
-- **Widgets Interactivos**: Componentes que responden a interacciones del usuario
-- **Animaciones Suaves**: Transiciones fluidas entre estados
-- **Diseño Adaptativo**: Se ajusta automáticamente a diferentes dispositivos
-- **Performance Optimizado**: Código eficiente para una experiencia fluida
+- Al cargar la página, `app.js` espera al evento `DOMContentLoaded` y ejecuta:
+  - Crea datos de ejemplo (mock) con categorías y valores
+  - Rellena el selector de filtro con las categorías únicas
+  - Dibuja las tarjetas y calcula los totales
+  - Crea un gráfico de barras con Chart.js usando esos datos
+- Cuando cambias el filtro:
+  - Se ocultan las tarjetas con una animación CSS
+  - Se filtran los datos, se actualizan tarjetas y totales
+  - Se actualiza el gráfico (labels y valores) y se vuelven a mostrar las tarjetas con animación
+
+Para explicación paso a paso, consulta `JS_EXPLICACION.md` y `CSS_EXPLICACION.md`.
 
 ## 🎨 Personalización
 
@@ -104,12 +113,12 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## 👨‍💻 Autor
 
-Desarrollado con ❤️ usando JavaScript puro y GSAP.
+Desarrollado con ❤️ usando JavaScript puro y Chart.js.
 
 ## 🙏 Agradecimientos
 
-- **GSAP Team** por la increíble biblioteca de animaciones
-- **Comunidad JavaScript** por el continuo soporte y recursos
+- **Chart.js** por facilitar la creación de gráficos
+- **Comunidad web** por documentación y ejemplos
 
 ## 📞 Soporte
 
@@ -120,3 +129,10 @@ Si tienes alguna pregunta o sugerencia:
 ---
 
 **¡Disfruta explorando tu mini-dashboard interactivo! 🎉**
+
+## 📚 Recursos para aprender
+- MDN JavaScript (arrays, map, filter, reduce): https://developer.mozilla.org/docs/Learn/JavaScript/First_steps/Arrays
+- MDN DOM (crear y modificar elementos): https://developer.mozilla.org/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents
+- Chart.js (documentación): https://www.chartjs.org/docs/latest/
+- CSS Grid: https://developer.mozilla.org/docs/Web/CSS/CSS_grid_layout
+- Flexbox: https://developer.mozilla.org/docs/Web/CSS/CSS_flexible_box_layout
