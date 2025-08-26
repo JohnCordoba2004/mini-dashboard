@@ -1,18 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
+  <title>Mini‑Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Dashboard minimalista para visualización de datos">
+
+  <!-- Fuente Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Encabezado principal -->
+  <header>
+    <h1>Mini‑Dashboard</h1>
+  </header>
 
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección de controles y filtros -->
+    <section id="controles" aria-label="Controles de filtrado">
+      <label for="filtro">Filtrar por categoría:</label>
+      <select id="filtro" aria-label="Seleccionar categoría para filtrar">
+        <option value="todas">Todas</option>
+        <option value="ventas">Ventas</option>
+        <option value="gastos">Gastos</option>
+        <option value="usuarios">Usuarios</option>
+        <option value="admin">Admin</option>
+      </select>
+    </section>
+
+    <!-- Sección de tarjetas de datos -->
+    <section id="cards" aria-live="polite" aria-label="Tarjetas de datos">
+      <!-- Las tarjetas se renderizan dinámicamente desde JavaScript -->
+    </section>
+
+    <!-- Sección del gráfico -->
+    <section id="grafico" aria-label="Gráfico de datos">
+      <canvas id="miGrafico" role="img" aria-label="Gráfico de barras mostrando datos por categoría"></canvas>
+    </section>
+
+    <!-- Sección de totales -->
+    <section id="totales" aria-label="Resumen de totales">
+      <p>Ventas: <span id="total-ventas">0</span></p>
+      <p>Gastos: <span id="total-gastos">0</span></p>
+      <p>Usuarios: <span id="total-usuarios">0</span></p>
+      <p>Admin: <span id="total-admin">0</span></p>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2025 - Mi Mini Dashboard</p>
+    <p>Hecho con ❤️ para aprender</p>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- JavaScript principal -->
+  <script type="module" src="app.js"></script>
 </body>
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script type="module" src="app.js"></script>
 
 </html>
